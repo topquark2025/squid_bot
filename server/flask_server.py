@@ -1,8 +1,8 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from threading import Thread
-from storage import data
 
+data = {}
 app = Flask(__name__)
 
 @app.route('/')
