@@ -30,3 +30,5 @@ async def on_ready():
 
     print(f'봇 로그인됨: {bot.user}')
     await bot.change_presence(status=discord.Status.idle)
+
+bot.run(os.getenv("TOKEN"))  # .env 파일의 TOKEN 사용
