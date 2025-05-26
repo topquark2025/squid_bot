@@ -4,3 +4,5 @@ flask
 aiohttp
 selectolax
 kivy
+requests
+plyer
