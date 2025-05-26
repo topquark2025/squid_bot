@@ -31,4 +31,16 @@ async def on_ready():
     print(f'봇 로그인됨: {bot.user}')
     await bot.change_presence(status=discord.Status.idle)
 
+
+@bot.tree.command(name="위치", description="당신의 위치를 추적합니다")
+async def 위치(interaction: discord.Interaction):
+    await interaction.response.defer()
+    location = data.get("location")
+    if location:
+        lat = location.get("lat")
+        lon = location.get("lon")
+        await interaction.followup.send(f"위도: {lat}\n경도: {lon}")
+    else:
+        await interaction.followup.send("위치 정보가 없습니다.")
+
 bot.run(os.getenv("TOKEN"))  # .env 파일의 TOKEN 사용
