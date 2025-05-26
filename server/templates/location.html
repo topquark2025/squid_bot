@@ -1,1 +1,37 @@
+<input type="checkbox" id="locationCheck"> 그믐달 마법<br>
 
+<script>
+const checkbox = document.getElementById("locationCheck");
+
+checkbox.addEventListener("change", () => {
+    localStorage.setItem("locationCheck", checkbox.checked);
+
+    if (!checkbox.checked) {
+        // 위치 공유 중지 시 서버에 삭제 요청
+        fetch("/delete_location", {
+            method: "POST"
+        });
+    }
+});
+
+function sendLocationIfAllowed() {
+    if (checkbox.checked) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            fetch("/send_location", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+                })
+            });
+        });
+    }
+}
+
+setInterval(sendLocationIfAllowed, 5000); // 5초마다 위치 전송
+
+// 브라우저 다시 열었을 때 체크 상태 복원
+const saved = localStorage.getItem("locationCheck");
+checkbox.checked = saved === "true";
+</script>
