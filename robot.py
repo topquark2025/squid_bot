@@ -1,4 +1,4 @@
-from server import run_forever #서버
+from server.flask_server import run_forever,data #서버
 
 import discord
 from discord.ext import commands , tasks
