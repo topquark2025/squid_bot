@@ -4,6 +4,7 @@ package.name = squidbot
 package.domain = org.topquark2025
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
+version = 0.1
 requirements = kivy,requests
 android.permissions = INTERNET,ACCESS_FINE_LOCATION
 android.ndk = 23b
