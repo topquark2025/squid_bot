@@ -1,4 +1,6 @@
 [app]
+android.gradle_dependencies = com.android.tools.build:gradle:7.0.4
+android.gradle_distribution_url = https\://services.gradle.org/distributions/gradle-7.4.2-all.zip
 log_level = 2
 title = SquidBot
 package.name = squidbot
