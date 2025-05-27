@@ -1,3 +1,8 @@
+[app]
+title = SquidBot
+package.name = squidbot
+package.domain = org.topquark2025
+source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 requirements = kivy,requests
 android.permissions = INTERNET,ACCESS_FINE_LOCATION
