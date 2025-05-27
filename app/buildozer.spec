@@ -1,4 +1,5 @@
 [app]
+log_level = 2
 title = SquidBot
 package.name = squidbot
 package.domain = org.topquark2025
